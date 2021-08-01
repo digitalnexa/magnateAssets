@@ -1,0 +1,33 @@
+/*
+	Nexa Theme
+	Author: zaki | Nexa
+	Version 0.0.1
+*/  
+
+
+//lib
+
+@import 'lib/_bootstrap.scss';
+@import 'lib/_fontawesome.scss';
+@import 'lib/_animate.scss';
+@import 'lib/_select2.scss';
+
+@import 'lib/_owl.scss';
+@import 'lib/_aos.scss';
+
+// Base
+@import 'base/_normalize.scss';
+@import 'base/_variables.scss';
+@import 'base/_mixins.scss';
+
+
+// Contents
+@import 'layout/_typography.scss';
+@import 'layout/_forms.scss';
+@import 'layout/_header.scss';
+@import 'layout/_footer.scss';
+
+
+// Layout
+@import 'layout/_main.scss';
+@import 'layout/_responsive.scss';

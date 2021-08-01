@@ -1,0 +1,161 @@
+@media only screen and (min-width: 1250px) {
+  html {
+    font-size: 16px;
+  }
+  .container {
+    width: 1250px;
+  }
+  .container-fluid {
+    width: 90%;
+  }
+
+}
+
+@media only screen and (max-width: 1450px) {
+  html {
+    font-size: 14px;
+  }
+
+}
+
+@media only screen and (min-width: 1650px) {
+
+}
+@media only screen and (min-width: 1024px) and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 1024px) {
+  
+  
+}
+
+@media only screen and (max-width: 768px) {
+
+  
+}
+
+@media only screen and (min-width: 1450px) {
+    
+}
+@media only screen and (min-width: 768px) and (max-width: 1500px) {
+  
+  
+}
+
+@media only screen and (max-width: 992px) {
+  header #navbarNav {
+    // width: 100%;
+    background: #f3f3f3;
+    z-index: 999;
+    // position: absolute;
+    left: 0px;
+    height: auto;
+    // top: 100%;
+    transition: 1s;
+  }
+  header #navbarNav ul {
+    height: auto;
+    width: 100%;
+  }
+  header #navbarNav ul li {
+    width: 100%;
+    a {      
+       font-size: 1.2rem;
+       line-height: inherit;
+    }
+  }
+  .list-development {
+    margin-left: 10px !important;
+    margin-top: 15px;
+  }
+  .other-links {
+    ul {
+      display: block !important;
+      li {
+        width: 49%;
+        margin-bottom: 5px;
+        display: inline-block;
+        > a {
+          font-weight: 600;
+        }
+        ul {
+          margin-left: 10px;
+          li {
+            > a {
+              font-weight: 300;
+            }
+          }
+        }
+      }
+    }
+  }
+  .blackbg .owl-nav .owl-prev {    
+    left: -50px;
+  }
+  .blackbg .owl-nav .owl-next {
+    right: -50px;
+  }
+  .developers {
+    margin-top: 15px;
+  }
+ .mt5 {
+    margin-top: 0 !important;
+  }
+  .owl-nav {
+    display: none;
+  }
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+  
+  
+}
+@media only screen and (max-width: 767px) {
+  
+  .planDetails {
+    .col-md-3 {
+      background-color: #f2f2f2;
+      margin: .7rem;
+      padding: 15px;
+      &:first-child {
+        background-color:transparent;
+        text-align: center;
+      }
+    }
+  }
+  .radios label {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .form-inline.first.w-100 {
+    position: relative;
+    button.btn-outline-dark {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+  .results {
+    .item.black-bg {
+      .row .col-md-4 {
+        border-bottom: 1px solid #1f1f1f;
+        padding: 15px;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 320px) and (max-width: 767px) {
+
+  
+}
+  
+@media only screen and (min-width: 768px) and (max-width: 768px) { 
+ 
+}
+
+
