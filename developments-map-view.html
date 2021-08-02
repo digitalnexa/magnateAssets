@@ -270,15 +270,12 @@
             
             <h4>Developments Map View</h4>
             <div class="mt-5 mb-5">
-              <iframe
-                class=""
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28899.86201090335!2d55.11423056274502!3d25.119364928587718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f1529c2653b15%3A0x3dcabcae764a3e16!2sPalm%20Jumeirah!5e0!3m2!1sen!2seg!4v1627309017855!5m2!1sen!2seg"
-                width="100%"
-                height="450"
-                style="border: 0"
-                allowfullscreen=""
-                loading="lazy"
-              ></iframe>
+
+              <div id="map_wrapper">
+                <div id="map_canvas" class="mapping"></div>
+              </div>
+        
+              
             </div>
           </div>
         </div>
@@ -286,6 +283,7 @@
       </div>
     </section>
     <!-- / -->
+
 
     
     <footer>
@@ -360,6 +358,7 @@
 
     <!-- Bootstrap core JavaScript -->
     <script type="text/javascript" src="assets/js/jquery.min.js"></script>
+    
     <script type="text/javascript" src="assets/js/popper.min.js"></script>
     <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/owl.carousel.min.js"></script>
@@ -369,7 +368,78 @@
     <script src="assets/js/parallax.min.js"></script>
     <script src="assets/js/aos.js"></script>
 
+<!-- 
+    <script src="assets/js/google .js"></script>
+    <script src="assets/js/markerclusterer_packed.js"></script>
+    <script src="assets/js/richmarker-compiled.js"></script>
+    <script src="assets/js/map-google.js"></script> -->
+
     <!-- Custom -->
     <script src="assets/js/custom.js"></script>
+
+    <!-- Google -->
+    <script>
+      jQuery(function($) {
+    var script = document.createElement('script');
+    script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyALXgEL2LPaiWFDKSnYOaWdeb2J87LKW-A&sensor=false&callback=initialize";
+    document.body.appendChild(script);
+    });
+
+
+function initialize() {
+    var map;
+    var bounds = new google.maps.LatLngBounds();
+    var mapOptions = {
+        mapTypeId: 'roadmap'
+    };
+                    
+    // Display a map on the page
+    map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+    map.setTilt(45);
+        
+    // Multiple Markers
+    var markers = [
+        ['Beylikdüzü Migros', 41.006841,28.6551643, 'https://i.ibb.co/r7PZwqh/pin.png'],
+        ['Crm Medya', 41.009892, 28.658326, 'https://i.ibb.co/r7PZwqh/pin.png']
+    ];
+                        
+    // Info Window Content
+    var infoWindowContent = [
+        ['<div class="ts-marker-wrapper"><a href="#" class="ts-marker" data-ts-id="700"><div class="ts-marker__feature"></div><div class="ts-marker__title">JAFZA One Convention Center Tower B</div><div class="ts-marker__image ts-black-gradient" style="background-image: url(http://fao.nexacmstest.com/Areas/Admin/Content/UAE/Building/Thumbnail/JAFZAOneBJebelAliFreeZoneAreaJAFZATHUMBNAIL.jpg)"></div></a></div>'],
+        ['<div class="ts-marker-wrapper"><a href="#" class="ts-marker" data-ts-id="700"><div class="ts-marker__feature"></div><div class="ts-marker__title">JAFZA One Convention Center Tower B</div><div class="ts-marker__image ts-black-gradient" style="background-image: url(http://fao.nexacmstest.com/Areas/Admin/Content/UAE/Building/Thumbnail/JAFZAOneBJebelAliFreeZoneAreaJAFZATHUMBNAIL.jpg)"></div></a></div>'],
+    ];
+        
+    // Display multiple markers on a map
+    var infoWindow = new google.maps.InfoWindow(), marker, i;
+    
+    // Loop through our array of markers & place each one on the map  
+    for( i = 0; i < markers.length; i++ ) {
+        var position = new google.maps.LatLng(markers[i][1], markers[i][2]);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0],
+            icon: markers[i][3]
+        });
+        
+        // Allow each marker to have an info window    
+        google.maps.event.addListener(marker, 'click', (function(marker, i) {
+            return function() {
+                infoWindow.setContent(infoWindowContent[i][0]);
+                infoWindow.open(map, marker);
+            }
+        })(marker, i));
+
+        map.fitBounds(bounds);
+    }
+
+    var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+        this.setZoom(15);
+        google.maps.event.removeListener(boundsListener);
+    });
+    
+}
+    </script>
   </body>
 </html>

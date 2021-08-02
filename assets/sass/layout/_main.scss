@@ -716,3 +716,143 @@ ul.content {
     }
 }
 
+.mapping {
+    height: 450px;
+    width: 100%;
+}
+
+
+
+
+
+/* =====================================================================================================================
+  MARKER
+ */
+
+ .ts-marker-wrapper {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    -webkit-transform-origin: 0 2.75rem;
+             transform-origin: 0 2.75rem;
+    transition: .3s ease;
+    /* background-image:url(../img/loader_backinout.gif); */
+}
+
+.ts-marker-wrapper.ts-hide-marker {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+
+.leaflet-div-icon {
+    background-color: transparent;
+    border: none;
+}
+
+.leaflet-marker-icon.ts-hide-marker .ts-marker {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+}
+
+.ts-marker {
+    display: inline-block;
+    position: relative;
+    padding-bottom: .5rem;
+    transition: .6s cubic-bezier(.16, .64, .31, 1.68);
+    -webkit-transform: translateY(0) rotate(.002deg);
+            transform: translateY(0) rotate(.002deg);
+}
+
+.ts-marker:hover, .ts-marker.ts-hover {
+    color: inherit;
+    -webkit-transform: translateY(-0.25rem);
+            transform: translateY(-0.25rem);
+    z-index: 1;
+}
+
+.ts-marker:hover .ts-marker__title, .ts-marker:hover .ts-marker__info,
+.ts-marker.ts-hover .ts-marker__title, .ts-marker.ts-hover .ts-marker__info {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+}
+
+.ts-marker:hover .ts-marker__info, .ts-marker.ts-hover .ts-marker__info {
+    transition-delay: .05s;
+}
+
+.ts-marker:hover:before, .ts-marker.ts-hover:before {
+    -webkit-transform: translateY(.25rem) scaleX(.8);
+            transform: translateY(.25rem) scaleX(.8);
+    opacity: .2;
+}
+
+.ts-marker:after {
+    border-color: #191919 transparent transparent transparent;
+    border-width: .375rem .375rem 0 0;
+    border-style: solid;
+    bottom: .1875rem;
+    content: "";
+    left: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.ts-marker:before {
+    content: url("../img/marker-shadow.png");
+    bottom: -0.375rem;
+    left: -0.0625rem;
+    position: absolute;
+    opacity: .8;
+    transition: .6s cubic-bezier(.16, .64, .31, 1.68);
+    -webkit-transform: translateY(0) scaleX(1);
+            transform: translateY(0) scaleX(1);
+    -webkit-transform-origin: left;
+             transform-origin: left;
+}
+
+.ts-marker .ts-marker__title, .ts-marker .ts-marker__info:nth-child(0).rent-info{
+    display: none;
+}
+
+.ts-marker .ts-marker__title, .ts-marker .ts-marker__info {
+    box-shadow: 0 .125rem .3125rem rgba(0, 0, 0, .1);
+    position: absolute;
+    font-size: .6875rem;
+    font-weight: 500;
+    left: .25rem;
+    white-space: nowrap;
+    border-radius: .0625rem;
+    pointer-events: none;
+    padding: .0625rem .25rem;
+    transition: .5s cubic-bezier(.03, .18, .05, 1.01);
+    -webkit-transform: translateX(.25rem);
+            transform: translateX(.25rem);
+    opacity: 0;
+}
+
+
+.ts-marker .ts-marker__image {
+    background-size: cover;
+    background-position: 50% 50%;
+    border-radius: .125rem;
+    box-shadow: 0 .25rem .5rem rgba(0, 0, 0, .3);
+    height: 4.625rem;
+    width: 4.625rem;
+    /* height: 2.625rem;
+    width: 2.625rem; */
+    position: relative;
+    /* background-image:url(../img/6nv1.gif);
+    background-size: cover;
+    background-position: center; */
+}
+
+.ts-marker .ts-marker__image:before {
+    border-bottom-right-radius: .125rem;
+}
+
+.ts-marker-hide {
+    opacity: .2;
+}
+
+
