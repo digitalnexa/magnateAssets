@@ -360,17 +360,17 @@
         -ms-border-radius: 0;
         -o-border-radius: 0;
     .btn-header-link {
-          color: #fff;
           display: block;
           text-align: left;
           background: rgba(0,0,0,0.8);
-          color: white;
+          color: #B2B2B2;
           padding: 20px;
           border-radius: 0;
           -webkit-border-radius: 0;
           -moz-border-radius: 0;
           -ms-border-radius: 0;
           -o-border-radius: 0;
+          font-size: 1.3rem;
           &:after {
             content: "\f107";
             font-family: 'Font Awesome 5 Free';
@@ -380,7 +380,9 @@
   
           &.collapsed {
             background: #000000;
-            color: #fff;
+            color: #B2B2B2;
+            font-size: 1.3rem;
+
 
   
             &:after {
@@ -1560,3 +1562,24 @@ ul.content {
     background-position: center;
     z-index: -2;
 }
+
+
+.buildingSpecifications {
+    p {
+        color: white;
+        min-height: 40px;
+        margin: 0;
+    }
+    h3 {
+        font-size: 1.2rem;
+        font-weight: 600;
+    }
+    ul {
+        li {
+            color: white;
+            width: 32.33%;
+            display: inline-block;
+            font-weight: 400;
+        }
+    }
+}   
